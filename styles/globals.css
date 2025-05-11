@@ -92,3 +92,14 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* embla 캐러셀 기본 스타일 */
+.embla__container {
+  display: flex;
+  transition: transform 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+}
