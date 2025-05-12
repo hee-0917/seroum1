@@ -158,7 +158,7 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-6">SEROUM 클리닉 소개</h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary">SEROUM 클리닉 소개</h2>
               <p className="text-gray-600 leading-relaxed">
                 SEROUM 클리닉은 수액센터와 비만센터를 운영하며 개인별 맞춤 처방으로<br />
                 건강과 아름다움을 위한 최적의 솔루션을 제공합니다.
@@ -227,11 +227,208 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SEROUM FLUID PROGRAM Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <p className="text-blue-600 text-lg mb-2">SEROUM FLUID PROGRAM</p>
+              <h2 className="text-4xl font-bold mb-10 text-primary">세강 수액 프로그램</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_04.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_05.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_06.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_07.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_08.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_09.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_10.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_11.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_12.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_13.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_14.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_15.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/seroum_fluid_land_16.jpg"
+                  alt="세로움 수액 프로그램"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEROUM SLIMBODY PROGRAM Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <p className="text-blue-600 text-lg mb-2">SEROUM SLIMBODY PROGRAM</p>
+              <h2 className="text-4xl font-bold mb-10 text-primary">비만 프로그램</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim1.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim2.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim3.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim4.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim5.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-black">
+                <Image
+                  src="/slim6.png"
+                  alt="세로움 비만 프로그램"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Location Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-6">찾아오시는 길</h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary">찾아오시는 길</h2>
               <p className="text-gray-600 leading-relaxed">
                 세로움 클리닉은 편리한 위치에 있으며, 쾌적한 환경에서 최상의 서비스를 제공합니다.
               </p>
