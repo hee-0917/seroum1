@@ -4,15 +4,47 @@ import Image from "next/image"
 import Link from "next/link"
 import { Calendar, Instagram, Youtube } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import DraggablePopup from "../components/DraggablePopup"
 
 export default function MainPage() {
-  // 팝업 노출 상태
-  const [showPopup, setShowPopup] = useState(true);
-  // 팝업 위치 상태
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupConfig, setPopupConfig] = useState<{
+    imageUrl: string;
+    isActive: boolean;
+    title: string;
+  } | null>(null);
   const [popupPos, setPopupPos] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const mouseStart = useRef({ x: 0, y: 0 });
+
+  // 팝업 설정 로드
+  useEffect(() => {
+    const fetchPopupConfig = async () => {
+      try {
+        console.log('Fetching popup config...')
+        const response = await fetch('/api/admin/main-popup')
+        const data = await response.json()
+        console.log('Received popup data:', data)
+        
+        if (data && data.imageUrl && data.isActive) {
+          console.log('Setting popup config and showing popup')
+          setPopupConfig(data)
+          setShowPopup(true)
+        } else {
+          console.log('Popup conditions not met:', {
+            hasData: !!data,
+            hasImageUrl: !!data?.imageUrl,
+            isActive: data?.isActive
+          })
+        }
+      } catch (error) {
+        console.error('팝업 설정 로드 실패:', error)
+      }
+    }
+
+    fetchPopupConfig()
+  }, [])
 
   // 드래그 이벤트 핸들러
   const onDragStart = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -59,46 +91,17 @@ export default function MainPage() {
     return () => clearInterval(timer);
   }, []);
 
+  console.log('Current popup state:', { showPopup, popupConfig })
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 팝업 오버레이 */}
-      {showPopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40">
-          {/* 오버레이 클릭 시 닫기 */}
-          <div
-            className="fixed inset-0 z-[90]"
-            onClick={() => setShowPopup(false)}
-          />
-          <div
-            className="relative bg-white rounded-xl shadow-2xl overflow-hidden max-w-xs sm:max-w-md z-[101]"
-            style={{ transform: `translate(${popupPos.x}px, ${popupPos.y}px)` }}
-            onClick={e => e.stopPropagation()}
-          >
-            {/* 드래그 핸들 */}
-            <div
-              className="w-full h-8 cursor-move bg-gradient-to-r from-primary/10 to-primary/20 flex items-center px-4 text-xs text-gray-500 select-none"
-              onMouseDown={onDragStart}
-              style={{ userSelect: "none" }}
-            >
-              이벤트 안내
-            </div>
-            <button
-              className="absolute top-2 right-2 z-10 text-gray-500 hover:text-gray-800 text-2xl font-bold"
-              onClick={() => setShowPopup(false)}
-              aria-label="팝업 닫기"
-            >
-              ×
-            </button>
-            <Image
-              src="/popup5.png"
-              alt="5월 이벤트 팝업"
-              width={400}
-              height={400}
-              className="w-full h-auto object-contain"
-              priority
-            />
-          </div>
-        </div>
+      {popupConfig?.imageUrl && showPopup && (
+        <DraggablePopup
+          isOpen={true}
+          onClose={() => setShowPopup(false)}
+          imageUrl={popupConfig.imageUrl}
+          imageAlt={popupConfig.title}
+        />
       )}
       {/* Side Buttons */}
       <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">

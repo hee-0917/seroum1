@@ -12,19 +12,19 @@ export default function LandingPage() {
       title: "수액센터",
       image: "/ChatGPT Image 2025년 4월 29일 오전 11_17_42.png",
       description: "맞춤형 수액 처방으로 건강한 아름다움을 찾아드립니다",
-      link: "/main"
+      link: "/main?section=iv"
     },
     {
       title: "비만센터",
       image: "/slimbody1.png",
       description: "체계적인 비만 관리로 건강한 체형을 만들어드립니다",
-      link: "/main"
+      link: "/main?section=obesity"
     },
     {
       title: "탈모센터",
       image: "/modern-hair-clinic.png",
       description: "전문적인 탈모 관리로 건강한 두피를 되찾아드립니다",
-      link: "/main"
+      link: "/main?section=hair"
     }
   ]
 
